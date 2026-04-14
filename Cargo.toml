@@ -1,6 +1,27 @@
-[package]
-name = "math_lib"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+members = [
+    "crates/math-core",
+    "crates/math-linalg",
+    "crates/math-graph",
+    "crates/math-numerics",
+    "crates/math-stats",
+    "crates/math-plot",
+    "crates/math-lib",
+]
+resolver = "2"
 
-[dependencies]
+[workspace.package]
+edition = "2024"
+license = "MIT"
+rust-version = "1.85"
+version = "0.1.0"
+
+[workspace.dependencies]
+math-core = { path = "crates/math-core", version = "0.1.0" }
+math-graph = { path = "crates/math-graph", version = "0.1.0" }
+math-linalg = { path = "crates/math-linalg", version = "0.1.0" }
+math-numerics = { path = "crates/math-numerics", version = "0.1.0" }
+math-plot = { path = "crates/math-plot", version = "0.1.0" }
+math-stats = { path = "crates/math-stats", version = "0.1.0" }
+num-traits = "0.2"
+rand = "0.8"

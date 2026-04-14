@@ -1,0 +1,24 @@
+[package]
+name = "math-lib"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "A broad Rust math library covering linear algebra, graph algorithms, numerics, statistics, and plotting."
+
+[features]
+default = ["linalg", "graph", "numerics", "stats", "plot"]
+graph = ["dep:math-graph"]
+linalg = ["dep:math-linalg"]
+numerics = ["dep:math-numerics"]
+plot = ["dep:math-plot"]
+png = ["plot", "math-plot/png"]
+stats = ["dep:math-stats"]
+
+[dependencies]
+math-core.workspace = true
+math-graph = { workspace = true, optional = true }
+math-linalg = { workspace = true, optional = true }
+math-numerics = { workspace = true, optional = true }
+math-plot = { workspace = true, optional = true }
+math-stats = { workspace = true, optional = true }
